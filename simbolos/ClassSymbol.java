@@ -1,3 +1,8 @@
+/**
+ * @author Isadora Fernandes Lopes
+ * @author Mariana Cardeliquio Mesquita
+ */
+
 package simbolos;
 
 import escopos.Scope;
@@ -31,7 +36,7 @@ public class ClassSymbol extends Symbol implements Scope {
 
     @Override
     public Scope getEnclosingScope() {
-        // Regra do roteiro: O pai é a superclasse. Se for nula, é o escopo global.
+        // O pai é a superclasse. Se for nula, é o escopo global.
         return (superClass != null) ? superClass : enclosingScope;
     }
 

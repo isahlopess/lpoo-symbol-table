@@ -1,3 +1,8 @@
+/**
+ * @author Isadora Fernandes Lopes
+ * @author Mariana Cardeliquio Mesquita
+ */
+
 package escopos;
 
 import simbolos.Symbol;
@@ -19,7 +24,7 @@ public class GlobalScope implements Scope {
 
     @Override
     public Scope getEnclosingScope() {
-        // Regra do roteiro: O escopo global não possui pai
+        // O escopo global não possui pai
         return null;
     }
 

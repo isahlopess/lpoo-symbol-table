@@ -1,3 +1,8 @@
+/**
+ * @author Isadora Fernandes Lopes
+ * @author Mariana Cardeliquio Mesquita
+ */
+
 package escopos;
 
 import simbolos.Symbol;

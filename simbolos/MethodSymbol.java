@@ -1,3 +1,8 @@
+/**
+ * @author Isadora Fernandes Lopes
+ * @author Mariana Cardeliquio Mesquita
+ */
+
 package simbolos;
 
 import escopos.Scope;
@@ -30,7 +35,7 @@ public class MethodSymbol extends Symbol implements Scope {
 
     @Override
     public Scope getEnclosingScope() {
-        // Regra do roteiro: O pai do escopo do método é a classe onde ele está.
+        // O pai do escopo do método é a classe onde ele está.
         return enclosingScope;
     }
 

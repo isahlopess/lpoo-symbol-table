@@ -1,3 +1,8 @@
+/**
+ * @author Isadora Fernandes Lopes
+ * @author Mariana Cardeliquio Mesquita
+ */
+
 import escopos.GlobalScope;
 import escopos.Scope;
 import simbolos.Symbol;
@@ -19,12 +24,12 @@ public class SymbolTable {
 
     // --- 1. Operações de Mudança de Escopo Corrente ---
 
-    // Entrar em um novo escopo (ex: quando o parser lê a declaração de um método)
+    // Entrar em um novo escopo
     public void pushScope(Scope scope) {
         currentScope = scope;
     }
 
-    // Sair do escopo atual (ex: quando o parser encontra o "}" fechando um método)
+    // Sair do escopo atual
     public void popScope() {
         // Volta o ponteiro para o escopo pai
         if (currentScope.getEnclosingScope() != null) {

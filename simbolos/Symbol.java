@@ -1,3 +1,8 @@
+/**
+ * @author Isadora Fernandes Lopes
+ * @author Mariana Cardeliquio Mesquita
+ */
+
 package simbolos;
 
 import java.util.EnumSet;
@@ -5,7 +10,7 @@ import java.util.Set;
 
 public abstract class Symbol {
     
-    // Usamos um Enum para definir os modificadores exatos que o professor pediu
+    // Usamos um Enum para definir os modificadores exigidos
     public enum Modifier {
         PUBLIC, PROTECTED, PRIVATE, STATIC, ABSTRACT, FINAL
     }
