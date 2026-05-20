@@ -3,8 +3,8 @@ TRABALHO 1 - LINGUAGEM DE PROGRAMAÇÃO ORIENTADA A OBJETOS
 ===========================================================
 
 ALUNAS:
-- Isadora Fernandes Lopes (RGA: [202419050786])
-- Mariana... (RGA: [INSERIR RGA])
+- Isadora Fernandes Lopes (RGA: 202419050786)
+- Mariana Cardeliquio Mesquita (RGA: 202519040642)
 
 LINK PARA O VÍDEO EXPLICATIVO: 
 [PENDENTE]
