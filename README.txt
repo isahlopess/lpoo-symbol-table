@@ -1,48 +1,30 @@
-===========================================================
-TRABALHO 1 - LINGUAGEM DE PROGRAMAÇÃO ORIENTADA A OBJETOS
-===========================================================
+# Symbol Table Engine (Java OOP)
 
-ALUNAS:
-- Isadora Fernandes Lopes (RGA: 202419050786)
-- Mariana Cardeliquio Mesquita (RGA: 202519040642)
+An object-oriented **Symbol Table** implementation for a simplified Java compiler, built to model lexical scoping, symbol hierarchies, and upward scope resolution.
 
-LINK PARA O VÍDEO EXPLICATIVO: 
-[PENDENTE]
+---
 
------------------------------------------------------------
-STATUS DAS ATIVIDADES:
------------------------------------------------------------
-[X] Atividade A1: Implementação da hierarquia de classes de símbolos e escopos. (Concluída com sucesso)
-[X] Atividade A2: Implementação da Tabela de Símbolos, com gerenciamento do escopo corrente e operações de busca. (Concluída com sucesso)
-[X] Atividade A3: Aplicação de teste (Main.java) simulando as chamadas do compilador e validando a busca ascendente. (Concluída com sucesso)
+## 🧱 Architecture & Packages
 
------------------------------------------------------------
-RESUMO DA ARQUITETURA E FUNCIONAMENTO:
------------------------------------------------------------
-Este projeto implementa o motor de uma Tabela de Símbolos para uma versão 
-simplificada da linguagem Java. O código foi organizado em pacotes:
+1. **`simbolos` (Symbols):**
+   - Defines the base `Symbol` abstraction with identifiers and access modifiers.
+   - Derived classes: `VariableSymbol`, `ClassSymbol`, `MethodSymbol`, and `ConstructorSymbol`.
+   - Classes and methods act as both symbols and scopes by implementing the internal scope contract.
 
-1. Pacote "simbolos":
-   Contém a classe abstrata base `Symbol`, que define o identificador e 
-   os modificadores de acesso. A partir dela, derivam `VariableSymbol`, 
-   `ClassSymbol`, `MethodSymbol` e `ConstructorSymbol`. As classes e 
-   métodos atuam não apenas como símbolos, mas também como escopos, 
-   implementando a interface responsável por guardar dados internamente.
+2. **`escopos` (Scopes):**
+   - Defines the `Scope` interface (symbol definition and resolution contract) along with `GlobalScope` and `BlockScope` implementations.
+   - Uses `TreeMap` (implementing Java's `Map` interface) for internal symbol storage across scopes.
 
-2. Pacote "escopos":
-   Contém a interface `Scope` (que dita o contrato de definição e resolução 
-   de símbolos) e as implementações estruturais `GlobalScope` e `BlockScope`. 
-   O armazenamento interno de todos os escopos utiliza a estrutura `TreeMap`, 
-   implementando a interface `Map` do Java.
+3. **Core Engine (`SymbolTable.java`):**
+   - Manages entering (`pushScope`) and exiting (`popScope`) blocks while tracking `currentScope`.
+   - Implements recursive upward resolution in `resolve`: searches the current scope first and delegates to the enclosing parent scope up to the global scope, with support for qualified lookups.
 
-3. Motor Central (SymbolTable.java):
-   Gerencia a entrada (pushScope) e saída (popScope) de blocos, mantendo o 
-   controle através da variável `currentScope`. O método `resolve` implementa 
-   a busca recursiva ascendente: procura o símbolo no escopo atual e, se não 
-   encontrar, delega a busca para o escopo pai (enclosing scope) até chegar 
-   ao escopo global. Também possui suporte a busca qualificada.
+4. **Test Driver (`Main.java`):**
+   - Simulates compiler/parser calls by registering classes, methods, and variables, validating symbol resolution across nested hierarchical scopes via console output.
 
-4. Teste de Execução (Main.java):
-   Simula o comportamento de um parser, inserindo manualmente as classes, 
-   métodos e atributos, comprovando via terminal (console) o sucesso da 
-   localização de variáveis em diferentes níveis hierárquicos.
+---
+
+## 🛠️ Tech Stack
+
+- **Language:** Java (Object-Oriented Programming)
+- **Concepts:** Symbol Tables, Lexical Scoping, Interfaces, Inheritance, `TreeMap`
